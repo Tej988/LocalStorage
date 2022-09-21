@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+    <!-- <script src="./Ls.js"></script> -->
+
+</head>
+
+<body>
+    <div class="input" style="text-align: center; align-items: center;">
+
+        <input type="text" name="fname" class="fname" placeholder="FirstName">
+        <input type="text" name="lname" class="lname" placeholder="LastName">
+        <input type="number" name="age" class="age" placeholder="Age">
+        <input type="text" placeholder="City" class="city">
+        <input type="text" placeholder="Country" class="country">
+
+        <Button class="btn">Sumbit</Button>
+        <hr>
+        <Button class="get"> Get Data</Button>
+
+
+        <div class="print">
+            <p> FirstName : <span class="p1"></span></p>
+            <p> LastName : <span class="p2"></span></p>
+            <p> Age : <span class="p3"></span></p>
+            <p> city : <span class="p4"></span></p>
+            <p> country : <span class="p5"></span></p>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+
+
+        let p1 = document.querySelector('.p1');
+        let p2 = document.querySelector(".p2");
+        let p3 = document.querySelector(".p3");
+        let p4 = document.querySelector(".p4");
+        let p5 = document.querySelector(".p5");
+        let btn = document.querySelector('.get')
+
+
+        let fname = document.querySelector('.fname');
+        let lname = document.querySelector(".lname");
+        let age = document.querySelector(".age");
+        let city = document.querySelector(".city");
+        let country = document.querySelector(".country");
+        let buttn = document.querySelector('button')
+
+        let input
+        buttn.addEventListener('click', () => {
+            localStorage.setItem('fname', fname.value)
+            localStorage.setItem('lname', lname.value)
+            localStorage.setItem('age', age.value)
+            localStorage.setItem('city', city.value)
+            localStorage.setItem('country', country.value)
+
+
+            
+
+        })
+
+        let output
+        btn.addEventListener('click',()=>{
+            let firstName = localStorage.getItem('fname')
+            let LastName = localStorage.getItem('lname')
+            let age2 = localStorage.getItem('age')
+            let city2 = localStorage.getItem('city')
+            let C = localStorage.getItem('country')
+
+           p1.textContent = firstName
+           p2.textContent = LastName
+           p3.textContent = age2
+           p4.textContent = city2
+           p5.textContent = C
+
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>
